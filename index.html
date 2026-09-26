@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#46596b">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2346596b'/%3E%3Cpath d='M4.5 21v-4.2c0-1 .5-1.9 1.4-2.4l1.6-.9 2.2-5.1A2.5 2.5 0 0 1 12 6.9h8a2.5 2.5 0 0 1 2.3 1.5l2.2 5.1 1.6.9c.9.5 1.4 1.4 1.4 2.4V21a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 21z' fill='%23fff'/%3E%3Cpath fill='%2346596b' d='M10 13.2l1.8-4.2h8.4l1.8 4.2zM6.8 16.6l4.4 1.1-.6 1.6-3.8-.6zM25.2 16.6l-4.4 1.1.6 1.6 3.8-.6z'/%3E%3Cpath stroke='%2346596b' fill='none' d='M13 19h6' stroke-width='1.6' stroke-linecap='round'/%3E%3Crect x='6' y='22' width='4.2' height='3.6' rx='1' fill='%23fff'/%3E%3Crect x='21.8' y='22' width='4.2' height='3.6' rx='1' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2346596b'/%3E%3Cpath d='M5.2 22.5a12 12 0 1 1 21.6 0' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/%3E%3Cpath d='M16 18.5l6.2-7.4' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='18.5' r='2.8' fill='%23fff'/%3E%3Cpath d='M11 26h10' stroke='%23fff' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
 <script>
 /* Load light unless dark was picked last time. Runs before first paint. */
 (function(){var t='light';try{var d=JSON.parse(localStorage.getItem('mbauto.v1')||'null');if(d&&d.settings&&d.settings.theme==='dark')t='dark'}catch(e){}document.documentElement.setAttribute('data-theme',t)})();
@@ -16,41 +16,43 @@
 <style>
 :root{
   color-scheme: light;
-  --bg:#f2f3f5; --surface:#ffffff; --surface-2:#f6f7f8; --border:#dde1e5; --border-2:#c9cfd5;
-  --text:#15191d; --text-2:#4f5861; --muted:#5f6872;
-  --accent:#46596b; --accent-strong:#33424f; --accent-soft:#e5eaef; --on-accent:#ffffff;
+  /* shared "Utility" neutrals; app accent = steel/gunmetal */
+  --bg:#f3f4f6; --surface:#ffffff; --surface-2:#f6f7f9; --surface-3:#eceef2; --border:#dfe2e7; --border-2:#c6cbd3;
+  --text:#1b1f24; --text-2:#48505c; --muted:#5f6773;
+  --accent:#46596b; --accent-strong:#33424f; --accent-soft:#e6ebf0; --on-accent:#ffffff; --accent-line:rgba(70,89,107,.38);
   --ok:#1f7a3d; --ok-soft:#e3f2e8; --warn:#9a5c00; --warn-soft:#fbefd9; --bad:#b8322b; --bad-soft:#fbe5e3;
-  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300;
+  /* chart series: steel-blue lead + validated companions (light surface) */
+  --s1:#3566a6; --s2:#c47d10; --s3:#1f9d93; --s4:#7b5cc4; --s5:#d9677b; --s6:#6f7f2a;
   --grid:#e8eaed; --shadow:0 1px 2px rgba(20,24,31,.06); --on-bad:#ffffff;
   --r:6px; --r-sm:4px; --ctl:38px; --ctl-sm:32px; --ease:120ms ease;
   --font:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
   --shadow-pop:0 8px 24px -6px rgba(20,24,31,.22),0 1px 3px rgba(20,24,31,.08); --hover-band:rgba(20,24,31,.045);
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
+  :root:where(:not([data-theme="light"])){
     color-scheme: dark;
-    --bg:#101316; --surface:#181c20; --surface-2:#1f2429; --border:#2b3238; --border-2:#3a434b;
-    --text:#eef1f3; --text-2:#b3bcc4; --muted:#87919b;
-    --accent:#9fb4c6; --accent-strong:#c0d0dd; --accent-soft:#25303a; --on-accent:#0e1317;
+    --bg:#16181c; --surface:#1e2126; --surface-2:#25292f; --surface-3:#2d3238; --border:#30353c; --border-2:#434a53;
+    --text:#e9ecf0; --text-2:#b4bbc5; --muted:#8e97a3;
+    --accent:#9fb4c6; --accent-strong:#c0d0dd; --accent-soft:#2a343e; --on-accent:#0e1317; --accent-line:rgba(159,180,198,.45);
     --ok:#56c585; --ok-soft:#173226; --warn:#e5a740; --warn-soft:#3a2b12; --bad:#f07a70; --bad-soft:#3d1c1a;
-    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
-    --grid:#262c32; --shadow:0 1px 2px rgba(0,0,0,.3); --on-bad:#1c0c0b;
+    --s1:#4f86cf; --s2:#bb7f14; --s3:#22a095; --s4:#8e7ae0; --s5:#d0637c; --s6:#6c8a2a;
+    --grid:#2b3037; --shadow:0 1px 2px rgba(0,0,0,.3); --on-bad:#1c0c0b;
     --shadow-pop:0 10px 28px -6px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03); --hover-band:rgba(255,255,255,.05);
   }
 }
 :root[data-theme="dark"]{
   color-scheme: dark;
-  --bg:#101316; --surface:#181c20; --surface-2:#1f2429; --border:#2b3238; --border-2:#3a434b;
-  --text:#eef1f3; --text-2:#b3bcc4; --muted:#87919b;
-  --accent:#9fb4c6; --accent-strong:#c0d0dd; --accent-soft:#25303a; --on-accent:#0e1317;
+  --bg:#16181c; --surface:#1e2126; --surface-2:#25292f; --surface-3:#2d3238; --border:#30353c; --border-2:#434a53;
+  --text:#e9ecf0; --text-2:#b4bbc5; --muted:#8e97a3;
+  --accent:#9fb4c6; --accent-strong:#c0d0dd; --accent-soft:#2a343e; --on-accent:#0e1317; --accent-line:rgba(159,180,198,.45);
   --ok:#56c585; --ok-soft:#173226; --warn:#e5a740; --warn-soft:#3a2b12; --bad:#f07a70; --bad-soft:#3d1c1a;
-  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300;
-  --grid:#262c32; --shadow:0 1px 2px rgba(0,0,0,.3); --on-bad:#1c0c0b;
-    --shadow-pop:0 10px 28px -6px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03); --hover-band:rgba(255,255,255,.05);
+  --s1:#4f86cf; --s2:#bb7f14; --s3:#22a095; --s4:#8e7ae0; --s5:#d0637c; --s6:#6c8a2a;
+  --grid:#2b3037; --shadow:0 1px 2px rgba(0,0,0,.3); --on-bad:#1c0c0b;
+  --shadow-pop:0 10px 28px -6px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03); --hover-band:rgba(255,255,255,.05);
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--text);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font:15px/1.45 var(--font);-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font:inherit;color:inherit}
 a{color:var(--accent)}
 .num{font-variant-numeric:tabular-nums}
@@ -500,7 +502,7 @@ mark{border-radius:2px}
 /* buttons */
 .btn{border-radius:var(--r-sm);min-height:var(--ctl);padding:0 14px;font-size:13.5px;justify-content:center}
 .btn:hover{background:var(--surface-2);border-color:color-mix(in srgb,var(--text) 30%,var(--border-2))}
-.btn:active{background:var(--grid)}
+.btn:active{background:var(--surface-3)}
 .btn.sm{min-height:var(--ctl-sm);padding:0 10px;font-size:13px}
 .btn.lg{min-height:44px;padding:0 20px;font-size:14.5px}
 .btn.pri{font-weight:600}
@@ -622,25 +624,77 @@ dialog::backdrop{background:rgba(10,12,16,.45)}
 .logo svg{width:20px;height:20px}
 .welcome .logo{width:52px;height:52px;border-radius:var(--r)}
 .welcome .logo svg{width:36px;height:36px}
-.logo .cut{fill:var(--accent)}.logo .cut-s{stroke:var(--accent)}
 .themesw{border:0;background:none;padding:0;cursor:pointer;display:grid;place-items:center;min-height:var(--ctl-sm);border-radius:var(--r-sm);color:var(--muted)}
 .themesw .tk{position:relative;display:block;width:52px;height:26px;border-radius:var(--r-sm);background:var(--surface-2);border:1px solid var(--border-2)}
 .themesw .tk .i{position:absolute;top:50%;width:13px;height:13px;margin-top:-6.5px;stroke-width:2}
 .themesw .ts{left:5px}.themesw .tm{right:5px}
-.themesw .th{position:absolute;left:1px;top:2px;width:22px;height:20px;border-radius:3px;background:var(--accent);transition:transform var(--ease)}
-.themesw[aria-checked="true"] .th{transform:translateX(26px)}
+.themesw .th{position:absolute;left:2px;top:2px;width:22px;height:20px;border-radius:3px;background:var(--accent);box-shadow:none;transition:transform var(--ease)}
+.themesw[aria-checked="true"] .th{transform:translateX(24px)}
 .themesw:hover .tk{border-color:color-mix(in srgb,var(--text) 35%,var(--border-2))}
 .themesw:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:640px){nav.tabs button{min-height:54px}}
+/* shared ecosystem: Data menu + "backed up" chip */
+.dwrap{position:relative}
+.dbtn{gap:6px;position:relative}
+.dbtn[aria-expanded="true"]{background:var(--surface-2);border-color:var(--accent)}
+.ddot{display:none;position:absolute;top:5px;right:5px;width:8px;height:8px;border-radius:2px;background:var(--warn);box-shadow:0 0 0 2px var(--surface)}
+.bk-chip{display:inline-flex;align-items:center;gap:6px;min-height:var(--ctl-sm);padding:0 10px;border:1px solid var(--border);border-radius:var(--r-sm);background:var(--surface);color:var(--text-2);font-size:12.5px;font-weight:550;cursor:pointer;white-space:nowrap;transition:background-color var(--ease),border-color var(--ease),color var(--ease)}
+.bk-chip[hidden]{display:none}
+.bk-chip .i{width:14px;height:14px;stroke-width:2.2;color:var(--ok)}
+.bk-chip:hover{background:var(--surface-2);border-color:var(--border-2);color:var(--text)}
+.bk-chip.stale{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 45%,transparent);color:var(--warn)}
+.bk-chip.stale .i{color:var(--warn)}
+.bk-chip:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.dm-panel{position:absolute;right:0;top:calc(100% + 6px);z-index:40;width:320px;background:var(--surface);border:1px solid var(--border-2);border-radius:var(--r);box-shadow:var(--shadow-pop);padding:4px}
+.dm-panel[hidden]{display:none}
+.dm-item{display:flex;align-items:center;gap:11px;width:100%;min-height:48px;padding:7px 10px;border:0;border-radius:var(--r-sm);background:none;text-align:left;cursor:pointer;color:var(--text);transition:background-color var(--ease)}
+.dm-item:hover,.dm-item:focus-visible{background:var(--surface-2);outline:none}
+.dm-item:focus-visible{box-shadow:inset 0 0 0 2px var(--accent)}
+.dm-item>.i{color:var(--text-2)}
+.dm-t{flex:1;min-width:0;display:flex;flex-direction:column}
+.dm-t b{font-weight:600;font-size:13.5px}
+.dm-t small{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dm-item.pri{background:var(--accent);color:var(--on-accent);margin-bottom:4px}
+.dm-item.pri>.i,.dm-item.pri small{color:inherit;opacity:.85}
+.dm-item.pri:hover{background:var(--accent-strong)}
+.dm-item.pri:focus-visible{box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--accent)}
+.dm-item kbd{font:600 11px var(--font);padding:2px 5px;border-radius:3px;border:1px solid currentColor;opacity:.7}
+.dm-sep{height:1px;background:var(--border);margin:4px 6px}
+.dm-foot{border-top:1px solid var(--border);margin-top:4px;padding:10px 10px 6px;font-size:12.5px;color:var(--text-2);display:flex;flex-direction:column;gap:6px}
+.dm-foot b{color:var(--text);font-weight:600;word-break:break-all}
+.inlink{border:0;background:none;padding:0;color:var(--accent-strong);font:inherit;font-weight:600;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.inlink:hover{color:var(--text)}
+.loc{font-size:12.5px;color:var(--text-2)}
+.loc b{color:var(--text);font-weight:600;word-break:break-all}
+.cfm-alt{margin-right:auto}
+.wtheme{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:16px;font-size:13px;color:var(--text-2);font-weight:600}
+.rn-list{margin:6px 0 0;padding-left:18px}
+.rn-list li{margin:3px 0}
+@media (max-width:640px){
+  .dbtn{width:44px;padding:0;justify-content:center}
+  .dbtn .dlbl{display:none}
+  .dm-panel{position:fixed;left:8px;right:8px;width:auto}
+  .bar{flex-wrap:wrap;row-gap:8px}
+  .vsel{order:10;flex:1 1 100%;max-width:none}
+}
+@media (max-width:520px){
+  .bk-chip{display:none!important}
+  .dbtn.stale .ddot{display:block}
+}
 </style>
 </head>
 <body>
 <header class="top">
   <div class="bar">
-    <div class="brand"><div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4.5 21v-4.2c0-1 .5-1.9 1.4-2.4l1.6-.9 2.2-5.1A2.5 2.5 0 0 1 12 6.9h8a2.5 2.5 0 0 1 2.3 1.5l2.2 5.1 1.6.9c.9.5 1.4 1.4 1.4 2.4V21a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 21z" fill="currentColor"/><path class="cut" d="M10 13.2l1.8-4.2h8.4l1.8 4.2zM6.8 16.6l4.4 1.1-.6 1.6-3.8-.6zM25.2 16.6l-4.4 1.1.6 1.6 3.8-.6z"/><path class="cut-s" fill="none" d="M13 19h6" stroke-width="1.6" stroke-linecap="round"/><rect x="6" y="22" width="4.2" height="3.6" rx="1" fill="currentColor"/><rect x="21.8" y="22" width="4.2" height="3.6" rx="1" fill="currentColor"/></svg></div><span>mbauto<span class="tld">.online</span></span></div>
+    <div class="brand"><div class="logo"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5.2 22.5a12 12 0 1 1 21.6 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M16 18.5l6.2-7.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="18.5" r="2.8" fill="currentColor"/><path d="M11 26h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></div><span>mbauto<span class="tld">.online</span></span></div>
     <div class="spacer"></div>
     <select class="vsel" id="vsel" aria-label="Vehicle"></select>
     <button class="iconbtn" id="searchBtn" data-act="search" title="Search (/)" aria-label="Search all records"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
+    <button class="bk-chip" id="bkChip" data-act="saveNow" hidden></button>
+    <div class="dwrap" id="dataWrap">
+      <button class="btn sm dbtn" id="dataBtn" data-act="datamenu" aria-haspopup="menu" aria-expanded="false" aria-controls="dataMenu" title="Backup, import & export"><svg class="i" viewBox="0 0 24 24"><ellipse cx="12" cy="5.5" rx="7.5" ry="2.8"/><path d="M4.5 5.5v13c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8v-13M4.5 12c0 1.5 3.4 2.8 7.5 2.8s7.5-1.3 7.5-2.8"/></svg><span class="dlbl">Data</span><i class="ddot" aria-hidden="true"></i></button>
+      <div class="dm-panel" id="dataMenu" role="menu" aria-label="Data" hidden></div>
+    </div>
     <button class="themesw" id="themeBtn" role="switch" aria-checked="false" aria-label="Dark mode" title="Dark mode"><span class="tk"><svg class="i ts" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i tm" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg><span class="th"></span></span></button>
     <button class="iconbtn" data-act="view" data-v="settings" title="Settings & backup" aria-label="Settings"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
   </div>
@@ -652,7 +706,7 @@ dialog::backdrop{background:rgba(10,12,16,.45)}
 <button class="fab" id="fab" data-act="addmenu" aria-label="Add entry"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg><span>Add entry</span></button>
 <button class="totop" id="totop" aria-label="Back to top" title="Back to top"><svg class="i" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
 <div class="notice" id="notice" role="region" aria-label="Storage notice" hidden>
-  <div class="nt"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><p><b>Your records stay in this browser.</b> No account, cookies or analytics. Export a backup from Settings so you don’t lose them.</p></div>
+  <div class="nt"><svg class="i" viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg><p><b>Your records stay in this browser.</b> No account, cookies or analytics. Save a backup from the <b>Data</b> menu so you don’t lose them.</p></div>
   <div class="nb"><button class="btn sm ghost" id="noticeMore">How storage works</button><button class="btn sm pri" id="noticeOk">Got it</button></div>
 </div>
 <dialog id="dlg"></dialog>
@@ -692,9 +746,12 @@ const P={
   search:'<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
   chev:'<path d="M6 9l6 6 6-6"/>',
   chevr:'<path d="M9 6l6 6-6 6"/>',
+  save:'<path d="M5 3.5h11l4 4V20a.5.5 0 0 1-.5.5h-14A.5.5 0 0 1 4.5 20V4a.5.5 0 0 1 .5-.5z"/><path d="M8 3.5v5h7v-5M8 20.5v-6h8v6"/>',
+  table:'<rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><path d="M3.5 9.5h17M3.5 14.5h17M9.5 9.5v10"/>',
+  folder:'<path d="M3.5 7V18a1.5 1.5 0 0 0 1.5 1.5h14a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 19 7.5h-7l-2-2.5H5A1.5 1.5 0 0 0 3.5 6.5z"/>',
   lock:'<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>'
 };
-const LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4.5 21v-4.2c0-1 .5-1.9 1.4-2.4l1.6-.9 2.2-5.1A2.5 2.5 0 0 1 12 6.9h8a2.5 2.5 0 0 1 2.3 1.5l2.2 5.1 1.6.9c.9.5 1.4 1.4 1.4 2.4V21a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 21z" fill="currentColor"/><path class="cut" d="M10 13.2l1.8-4.2h8.4l1.8 4.2zM6.8 16.6l4.4 1.1-.6 1.6-3.8-.6zM25.2 16.6l-4.4 1.1.6 1.6 3.8-.6z"/><path class="cut-s" fill="none" d="M13 19h6" stroke-width="1.6" stroke-linecap="round"/><rect x="6" y="22" width="4.2" height="3.6" rx="1" fill="currentColor"/><rect x="21.8" y="22" width="4.2" height="3.6" rx="1" fill="currentColor"/></svg>';
+const LOGO='<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5.2 22.5a12 12 0 1 1 21.6 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M16 18.5l6.2-7.4" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><circle cx="16" cy="18.5" r="2.8" fill="currentColor"/><path d="M11 26h10" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
 const ic=(n,c='i')=>`<svg class="${c}" viewBox="0 0 24 24">${P[n]||''}</svg>`;
 
 /* ================= storage ================= */
@@ -732,7 +789,7 @@ function load(){let r=null;try{r=localStorage.getItem(KEY)}catch(e){return blank
   try{return normalize(JSON.parse(r))}catch(e){try{localStorage.setItem(KEY+'.unreadable',r)}catch(_){}LOADERR=true;return blank()}}
 let S=load();
 /* last successful JSON export, for the "Backed up …" pill */
-const BKEY='mbauto.lastBackup',BSTALE=14;
+const BKEY='mbauto.lastBackup',BSTALE=7;
 function lastBackup(){try{const t=+localStorage.getItem(BKEY);return t>0?t:0}catch(e){return 0}}
 function backupPill(){const t=lastBackup();if(!t)return`<span class="pill soon">${ic('alert')}Never backed up</span>`;
   const d=Math.floor((Date.now()-t)/864e5),when=d<1?'today':d===1?'yesterday':d+' days ago';
@@ -790,6 +847,107 @@ function trashRestore(id){
   const d=normalize(t.data);for(const k of COLLS){const have=new Set(S[k].map(x=>x.id));for(const r of d[k])if(!have.has(r.id))S[k].push(r)}
   TRASH.splice(i,1);saveTrash();save();render();toast('Restored');
 }
+
+/* ================= backup files ================= */
+/* Save location: File System Access API. The chosen file handle is kept in IndexedDB (handles can't go in localStorage),
+   so "Save backup now" can overwrite that same file in one click. Browsers without the API (Firefox, Safari, phones) download instead. */
+const FS_OK=typeof window.showSaveFilePicker==='function'&&typeof window.showOpenFilePicker==='function';
+const FH={json:null,csv:null};
+const FKIND={json:{name:'mbauto-backup.json',mime:'application/json',types:[{description:'mbauto.online backup',accept:{'application/json':['.json']}}]},
+  csv:{name:'mbauto-records.csv',mime:'text/csv',types:[{description:'CSV spreadsheet',accept:{'text/csv':['.csv']}}]}};
+function idb(mode,fn){return new Promise((res,rej)=>{let r;try{r=indexedDB.open('mbauto.files',1)}catch(e){return rej(e)}
+  r.onupgradeneeded=()=>r.result.createObjectStore('h');r.onerror=()=>rej(r.error);
+  r.onsuccess=()=>{const db=r.result;let q;try{const tx=db.transaction('h',mode);q=fn(tx.objectStore('h'));tx.oncomplete=()=>{db.close();res(q&&q.result)};tx.onerror=tx.onabort=()=>{db.close();rej(tx.error)}}catch(e){db.close();rej(e)}}})}
+const hGet=k=>idb('readonly',st=>st.get(k)).catch(()=>null);
+const hPut=(k,v)=>idb('readwrite',st=>st.put(v,k)).catch(()=>{});
+const hDel=k=>idb('readwrite',st=>st.delete(k)).catch(()=>{});
+async function loadHandles(){if(!FS_OK)return;FH.json=await hGet('json')||null;FH.csv=await hGet('csv')||null;paintBackup()}
+async function canWrite(h){try{const o={mode:'readwrite'};if(await h.queryPermission(o)==='granted')return true;return await h.requestPermission(o)==='granted'}catch(e){return false}}
+async function pickSave(k){const o={suggestedName:FKIND[k].name,types:FKIND[k].types,startIn:FH[k]||FH.json||'documents'};
+  try{return await showSaveFilePicker(o)}catch(e){if(e&&e.name==='AbortError')return null;
+    delete o.startIn;try{return await showSaveFilePicker(o)}catch(e2){if(e2&&e2.name==='AbortError')return null;throw e2}}}
+const hasData=()=>COLLS.some(k=>S[k].length);
+function markBackup(){try{localStorage.setItem(BKEY,String(Date.now()))}catch(e){}}
+/* Writes the JSON backup or the CSV. pick=true always asks where (Export…); otherwise reuses the remembered file.
+   Returns {name} when written to a chosen file, {dl:true} when downloaded, or null when cancelled/failed. */
+async function writeOut(k,pick){
+  const text=k==='json'?JSON.stringify(S,null,2):csvText();
+  if(!FS_OK){dl(k==='json'?`mbauto-backup-${today()}.json`:`mbauto-records-${today()}.csv`,text,FKIND[k].mime);if(k==='json')markBackup();paintBackup();return{dl:true}}
+  let h=pick?null:FH[k];
+  if(h&&!await canWrite(h)){toast(`Permission to update ${h.name} wasn’t given. Choose where to save it.`);h=null}
+  if(!h){try{h=await pickSave(k)}catch(e){toast('Couldn’t open the save dialog. Try again.');return null}if(!h)return null}
+  try{const w=await h.createWritable();await w.write(text);await w.close()}
+  catch(e){if(FH[k]&&FH[k]===h){FH[k]=null;hDel(k)}paintBackup();toast(`Couldn’t write ${h.name}. Choose the location again.`);return null}
+  FH[k]=h;hPut(k,h);if(k==='json')markBackup();paintBackup();return{name:h.name};
+}
+async function saveNow(){
+  if(!hasData()&&!await confirmModal({title:'Save an empty backup?',msg:`There are no vehicles or records in this browser. Saving now would ${FH.json?`overwrite <b>${esc(FH.json.name)}</b> with`:'create'} an empty backup.`,ok:'Save anyway',danger:false}))return;
+  const r=await writeOut('json',false);if(!r)return;
+  if(r.dl){toast('Backup downloaded to your Downloads folder');return}
+  let extra='';if(FH.csv){const c=await writeOut('csv',false);extra=c&&c.name?` and ${c.name}`:' (CSV not updated)'}
+  toast(`Backup saved to ${r.name}${extra}`);
+}
+async function exportAs(k){const r=await writeOut(k,true);if(!r)return;
+  toast(r.dl?(k==='json'?'Backup downloaded to your Downloads folder':'CSV downloaded to your Downloads folder'):`Saved ${r.name}`)}
+async function importBackup(){
+  if(!FS_OK){$('#importFile').click();return}
+  let fh;const o={types:FKIND.json.types,multiple:false};if(FH.json)o.startIn=FH.json;
+  try{[fh]=await showOpenFilePicker(o)}catch(e){if(e&&e.name==='AbortError')return;
+    try{[fh]=await showOpenFilePicker({types:FKIND.json.types})}catch(e2){if(!e2||e2.name!=='AbortError')$('#importFile').click();return}}
+  try{readBackup(await fh.getFile())}catch(e){toast('Couldn’t open that file')}
+}
+function readBackup(f){
+  if(f.size>25e6){toast('That file is too large to be an mbauto.online backup');return}
+  const rd=new FileReader();
+  rd.onload=async()=>{let d;try{const raw=JSON.parse(rd.result);if(!isObj(raw)||!Array.isArray(raw.vehicles))throw 0;d=normalize(raw)}catch(err){toast('That file isn’t a valid mbauto.online backup');return}
+    const nrec=COLLS.reduce((a,k)=>a+(k==='vehicles'?0:d[k].length),0);
+    let how='replace';
+    if(hasData()){how=await confirmModal({title:'Restore this backup?',msg:`The backup has ${plural(d.vehicles.length,'vehicle')} and ${plural(nrec,'record')}.<br><b>Merge</b> adds anything that isn’t already here. Nothing gets doubled.<br><b>Replace</b> swaps everything in this browser for the backup.`,ok:'Merge',danger:false,alt:'Replace'});
+      if(!how)return;how=how==='alt'?'replace':'merge'}
+    const tid=trashFull(how==='merge'?'Your data, before merging a backup':'Your data, before restoring a backup');OB=null;
+    if(how==='merge'){let n=0;for(const k of COLLS){const have=new Set(S[k].map(x=>x.id));for(const r of d[k])if(!have.has(r.id)){S[k].push(r);n++}}
+      save();render();toast(n?`Merged ${plural(n,'new item')}`:'Nothing new. Everything in the backup is already here',n&&tid?()=>trashRestore(tid):null);return}
+    const th=S.settings.theme;S=d;S.settings.theme=th;save();render();toast('Backup restored',tid?()=>trashRestore(tid):null)};
+  rd.readAsText(f);
+}
+/* header chip + data menu */
+function bkState(){const t=lastBackup();const d=t?Math.floor((Date.now()-t)/864e5):null;
+  return{t,d,stale:t?d>BSTALE:hasData(),text:!t?'Never backed up':'Backed up '+(d<1?'today':d===1?'yesterday':d+' days ago')}}
+function paintBackup(){
+  const c=$('#bkChip'),b=bkState();c.hidden=!hasData()&&!b.t;
+  c.className='bk-chip'+(b.stale?' stale':'');c.innerHTML=ic(b.stale?'alert':'check')+esc(b.text);
+  c.title=(b.t?'Last backup '+new Date(b.t).toLocaleString()+'. ':'')+'Click to save a backup now';
+  $('#dataBtn').classList.toggle('stale',b.stale);
+  $('#dataBtn').setAttribute('aria-label','Data'+(b.stale?' ('+b.text.toLowerCase()+')':''));
+  if(!$('#dataMenu').hidden)$('#dataMenu').innerHTML=dataMenuHTML();
+  if(S.settings.view==='settings'&&!OB&&document.querySelector('#bkcard'))$('#bkcard').outerHTML=backupCard();
+}
+const KBD=/Mac|iP(hone|ad|od)/.test(navigator.platform||navigator.userAgent)?'⌘S':'Ctrl+S';
+const dmItem=(act,icon,t,sub,cls='',kbd='')=>`<button class="dm-item ${cls}" role="menuitem" tabindex="-1" data-act="${act}">${ic(icon)}<span class="dm-t"><b>${t}</b><small>${sub}</small></span>${kbd?`<kbd>${kbd}</kbd>`:''}</button>`;
+function locHTML(){
+  if(!FS_OK)return'This browser saves each backup to your <b>Downloads</b> folder with the date in the name.';
+  if(!FH.json)return'The first save asks where to keep the file. After that, Save backup now updates it in one click.';
+  return`Saves to <b>${esc(FH.json.name)}</b> in the folder you chose.${FH.csv?` CSV: <b>${esc(FH.csv.name)}</b>.`:''} <button class="inlink" data-act="changeLoc">Change location…</button>`;
+}
+function dataMenuHTML(){
+  const saveSub=!FS_OK?'Downloads a dated copy':FH.json?'Overwrites '+esc(FH.json.name)+(FH.csv?' + CSV':''):'Choose where to keep it';
+  return dmItem('saveNow','save','Save backup now',saveSub,'pri',KBD)
+    +dmItem('export','download','Export All (JSON)…',FS_OK?'Full backup · pick folder and name':'Full backup file')
+    +dmItem('import','upload','Import Backup (JSON)…','Merge into or replace what’s here')
+    +'<div class="dm-sep"></div>'
+    +dmItem('csv','table','Export All (CSV)…','Every record, for spreadsheets')
+    +`<div class="dm-foot"><div>${backupPill()}</div><div>${locHTML()}</div></div>`;
+}
+function openDataMenu(){const m=$('#dataMenu');m.innerHTML=dataMenuHTML();m.style.top=matchMedia('(max-width:640px)').matches?Math.round($('#dataBtn').getBoundingClientRect().bottom+6)+'px':'';m.hidden=false;$('#dataBtn').setAttribute('aria-expanded','true');const f=m.querySelector('.dm-item');if(f)f.focus()}
+function closeDataMenu(focus){const m=$('#dataMenu');if(m.hidden)return;m.hidden=true;$('#dataBtn').setAttribute('aria-expanded','false');if(focus)$('#dataBtn').focus()}
+document.addEventListener('click',e=>{if(!$('#dataMenu').hidden&&!e.target.closest('#dataWrap'))closeDataMenu()});
+$('#dataMenu').addEventListener('keydown',e=>{const it=[...$('#dataMenu').querySelectorAll('.dm-item')];const i=it.indexOf(document.activeElement);
+  if(e.key==='Escape'){e.preventDefault();closeDataMenu(true)}
+  else if(e.key==='ArrowDown'){e.preventDefault();it[(i+1)%it.length].focus()}
+  else if(e.key==='ArrowUp'){e.preventDefault();it[(i-1+it.length)%it.length].focus()}
+  else if(e.key==='Home'){e.preventDefault();it[0].focus()}else if(e.key==='End'){e.preventDefault();it[it.length-1].focus()}
+  else if(e.key==='Tab')closeDataMenu()});
+document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&!e.altKey&&!e.shiftKey&&(e.key||'').toLowerCase()==='s'){e.preventDefault();if(document.querySelector('dialog[open]'))return;closeDataMenu();saveNow()}});
 
 /* ================= model ================= */
 const veh=id=>S.vehicles.find(v=>v.id===id);
@@ -936,6 +1094,7 @@ function renderChrome(){
   $('#searchBtn').style.display=on?'':'none';
   const th=S.settings.theme==='dark'?'dark':'light';document.documentElement.dataset.theme=th;
   $('#themeBtn').setAttribute('aria-checked',String(th==='dark'));
+  paintBackup();
 }
 function render(){
   renderChrome();
@@ -968,6 +1127,7 @@ function welcome(){return`<div class="card welcome">
     <button class="btn pri lg" data-act="newVehicle">${ic('plus')}Start tracking your vehicle</button>
     <button class="btn lg" data-act="sample">Explore with sample data</button>
   </div>
+  <div class="wtheme"><span id="wthl">Appearance</span><div class="seg" role="group" aria-labelledby="wthl">${[['light','Light'],['dark','Dark']].map(([k,l])=>`<button class="${S.settings.theme===k?'on':''}" aria-pressed="${S.settings.theme===k}" data-act="theme" data-v="${k}">${l}</button>`).join('')}</div></div>
   <button class="linkbtn" data-act="import">Have a backup? Restore it</button>
   <div class="legal-links"><button class="linkbtn" data-act="view" data-v="privacy">Privacy</button><button class="linkbtn" data-act="view" data-v="terms">Terms</button></div></div>`}
 
@@ -1163,22 +1323,50 @@ function vGarage(){
 /* ---- Settings ---- */
 function vSettings(){
   const c=k=>S[k].length;
-  return`<div class="head"><div><h1>Settings & help</h1><div class="sub">Your records live only in this browser. Export a backup to keep them safe.</div></div><button class="btn" data-act="view" data-v="dash">Back</button></div>
-  <div class="grid g2">
+  return`<div class="head"><div><h1>Settings & help</h1><div class="sub">Your records live only in this browser. Save a backup to keep them safe. · Version ${VERSION}</div></div><button class="btn" data-act="view" data-v="dash">Back</button></div>
+  ${backupCard()}
+  <div class="grid g3 mt">
   <div class="card pad stack"><h2>Appearance</h2><div class="seg">${[['light','Light'],['dark','Dark']].map(([k,l])=>`<button class="${S.settings.theme===k?'on':''}" aria-pressed="${S.settings.theme===k}" data-act="theme" data-v="${k}">${l}</button>`).join('')}</div></div>
-  <div class="card pad stack"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2>Backup</h2>${backupPill()}</div><div class="sub">${c('vehicles')} vehicles · ${c('services')} service/repair records · ${c('fuel')} fill-ups · ${c('expenses')} expenses · ${c('reminders')} reminders</div>
-    <div class="toolbar"><button class="btn pri" data-act="export">${ic('download')}Export All (JSON)</button><button class="btn" data-act="import">${ic('upload')}Import Backup (JSON)</button><button class="btn" data-act="csv">${ic('download')}Export Records (CSV)</button></div>${storageNote()}</div>
   <div class="card pad stack"><h2>Sample data</h2><div class="sub">Loads a sample car and motorcycle with past fill-ups, services and expenses. Replaces your current data.</div><div><button class="btn" data-act="sample">Load sample data</button></div></div>
   <div class="card pad stack"><h2>Erase everything</h2><div class="sub">Deletes all vehicles and records. They stay in Recently deleted for 30 days unless you empty it.</div><div><button class="btn danger" data-act="wipe">${ic('trash')}Erase all data</button></div></div>
-  </div>${trashHTML()}${faqHTML()}
+  </div>${trashHTML()}${faqHTML()}${notesHTML()}
   <div class="card pad mt" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h2>Privacy & terms</h2><div class="sub">What mbauto.online stores, and the limits of its estimates.</div></div><div class="toolbar"><button class="btn" data-act="view" data-v="privacy">Privacy</button><button class="btn" data-act="view" data-v="terms">Terms of use</button></div></div>`;
 }
+function backupCard(){const c=k=>S[k].length;
+  return`<div class="card pad stack" id="bkcard"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2>Backup</h2>${backupPill()}</div><div class="sub">${c('vehicles')} vehicles · ${c('services')} service/repair records · ${c('fuel')} fill-ups · ${c('expenses')} expenses · ${c('reminders')} reminders</div>
+    <div class="toolbar"><button class="btn pri" data-act="saveNow">${ic('save')}Save backup now</button><button class="btn" data-act="export">${ic('download')}Export All (JSON)…</button><button class="btn" data-act="import">${ic('upload')}Import Backup (JSON)…</button><button class="btn" data-act="csv">${ic('table')}Export All (CSV)…</button></div>
+    <div class="loc">${locHTML()}</div>${storageNote()}</div>`}
+/* ---- release notes ---- */
+const VERSION='1.1';
+const RELEASES=[
+ ['1.1','September 26, 2026',[
+  '<b>Data menu</b> in the header with Save backup now, Export All (JSON)…, Import Backup (JSON)… and Export All (CSV)….',
+  '<b>Choose where backups go.</b> Pick the folder and file name once; mbauto.online remembers it and <b>Save backup now</b> (Ctrl/⌘+S) overwrites that file in one click.',
+  'Save backup now also refreshes your CSV file once you’ve exported one to a chosen location.',
+  'Browsers that can’t pick a location (Firefox, Safari, phones) still download a dated copy to Downloads, and the menu says so.',
+  '<b>Merge on import.</b> Restoring a backup can now add only what’s missing instead of replacing everything. Importing the same file twice never doubles your records.',
+  '“Backed up” status next to the Data button. It turns amber after 7 days, or when you have records and no backup yet. Click it to save.',
+  'New app icon: a dashboard gauge.',
+  'Clearer chart colors for the six cost categories, checked for color-blind separation in light and dark mode.',
+  'Pick light or dark on the welcome screen. The app still opens in light unless you chose dark.',
+  'Colors, borders and the light/dark switch now match the rest of the MB app family.',
+  'Release notes (this list).']],
+ ['1.0','',[
+  'Overview with odometer, cost per mile, spending this year and what’s due next.',
+  'Maintenance reminders by miles, months or both, with default schedules for cars, motorcycles and EVs.',
+  'Fuel log with MPG (or mi/kWh) per full tank and a trend chart.',
+  'Repairs with parts/labor, covered-by-warranty flag and repair warranty dates.',
+  'Cost of ownership with repeating expenses, per-vehicle totals and estimated depreciation.',
+  'Garage for multiple vehicles, search across every record (/ or Ctrl+K), and Recently deleted for 30 days.',
+  'JSON backup, CSV export, sample data. Everything stays in this browser.']]
+];
+function notesHTML(){return`<div class="card mt faq" id="notes"><div class="card-h"><div><h2>Release notes</h2><div class="sub">You’re on version ${VERSION}</div></div></div>${RELEASES.map(([v,d,it],i)=>`<details${i===0?' open':''}><summary><span>Version ${v}${d?` <span class="muted" style="font-weight:500">· ${d}</span>`:''}</span>${ic('chev')}</summary><div class="a"><ul class="rn-list">${it.map(x=>`<li>${x}</li>`).join('')}</ul></div></details>`).join('')}</div>`}
 function trashHTML(){
   return`<div class="card mt" id="trash"><div class="card-h"><div><h2>Recently deleted</h2><div class="sub">Kept on this device for ${TDAYS} days, then removed.</div></div>${TRASH.length?`<button class="btn sm danger" data-act="trashEmpty">${ic('trash')}Empty</button>`:''}</div>
   ${TRASH.length?TRASH.map(t=>{const left=Math.max(1,Math.ceil((t.at+TDAYS*864e5-Date.now())/864e5));return`<div class="trow"><div class="ic">${ic(t.full?'receipt':'trash')}</div><div class="main"><div class="t">${esc(t.label)}</div><div class="m">Deleted ${esc(new Date(t.at).toLocaleDateString(undefined,{month:'short',day:'numeric'}))} · ${plural(left,'day')} left</div></div><button class="btn sm" data-act="trashRestore" data-id="${esc(t.id)}">Restore</button></div>`}).join(''):`<div class="empty"><b>Nothing here</b>Deleted entries and vehicles show up here for ${TDAYS} days.</div>`}</div>`;
 }
 const CONTACT=''; // TODO: add a public contact email or web form before publishing
-const EFFECTIVE='September 23, 2026';
+const EFFECTIVE='September 26, 2026';
 function legalHead(t){return`<div class="head"><div><h1>${t}</h1><div class="sub">Effective ${EFFECTIVE}</div></div><button class="btn" data-act="back">Back</button></div>`}
 const contactHTML=()=>CONTACT?`<h2>Contact</h2><p>Questions: ${esc(CONTACT)}</p>`:'';
 function vPrivacy(){return`<div class="legal">${legalHead('Privacy')}<div class="card">
@@ -1187,7 +1375,8 @@ function vPrivacy(){return`<div class="legal">${legalHead('Privacy')}<div class=
   <h2>What is stored on your device</h2>
   <ul><li>Vehicles: year, make, model, and anything optional you add (nickname, plate, VIN, purchase date and price, estimated value, notes).</li>
   <li>Fill-ups, services, repairs, expenses, odometer readings and reminders you enter.</li>
-  <li>Settings such as theme and the last screen you viewed, and a note that you closed the storage notice.</li>
+  <li>Settings such as theme and the last screen you viewed, when you last backed up, and a note that you closed the storage notice.</li>
+  <li>If your browser supports it, a reference to the backup file you chose (not its contents), so Save backup now can update that one file after you allow it. Clearing this site’s data forgets it.</li>
   <li>Items you delete, kept in Recently deleted for ${TDAYS} days so you can restore them.</li></ul>
   <h2>What leaves your device</h2>
   <p>When you open mbauto.online, your browser downloads the page from the website’s host. Like most web servers, the host may keep standard logs such as your IP address, browser type and the time of the request. After the page loads, the app makes no network requests. The page’s security policy blocks it from contacting other servers.</p>
@@ -1195,7 +1384,7 @@ function vPrivacy(){return`<div class="legal">${legalHead('Privacy')}<div class=
   <h2>Please don’t enter</h2>
   <p>Passwords, Social Security numbers, bank or card numbers, or other highly sensitive information. Notes are stored as plain text, and anyone using this browser profile can open the app and see your records.</p>
   <h2>Your controls</h2>
-  <ul><li><b>Export:</b> Settings → Export backup or Export CSV.</li><li><b>Delete one item:</b> open it and tap Delete.</li>
+  <ul><li><b>Export:</b> Data menu → Save backup now, Export All (JSON) or Export All (CSV).</li><li><b>Delete one item:</b> open it and tap Delete.</li>
   <li><b>Delete everything for good:</b> Settings → Erase all data, then empty Recently deleted. Clearing this site’s data in your browser settings also removes everything.</li>
   <li>Private or incognito windows discard your records when closed.</li></ul>
   <h2>Children</h2><p>mbauto.online is meant for vehicle owners and isn’t directed to children. It doesn’t collect information from anyone, because records stay on the device.</p>
@@ -1341,13 +1530,14 @@ async function odoGuard(vid,odo,date,selfId){const o=n0(odo);if(o==null)return t
   if(!hi.length)return true;
   return confirmModal({title:'Odometer looks low',msg:`${mi(o)} mi is lower than an earlier reading of ${mi(Math.max(...hi.map(r=>r.odo)))} mi. Check for a typo, or save it anyway.`,ok:'Save anyway',danger:false});
 }
-function confirmModal({title,msg,ok='Delete',danger=true,typed}){return new Promise(res=>{
+function confirmModal({title,msg,ok='Delete',danger=true,typed,alt}){return new Promise(res=>{
   const c=$('#cfm');c.setAttribute('aria-label',title);
   c.innerHTML=`<form novalidate><div class="cfm-b"><div class="cfm-ic ${danger?'bad':''}">${ic(danger?'trash':'alert')}</div><div style="flex:1;min-width:0"><h2>${esc(title)}</h2><p>${msg}</p>${typed?`<input id="cfmIn" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Type ${typed} to confirm" aria-label="Type ${typed} to confirm">`:''}</div></div>
-    <div class="dlg-f"><button type="button" class="btn" data-no>Cancel</button><button type="submit" class="btn ${danger?'dangerfill':'pri'}" data-yes ${typed?'disabled':''}>${esc(ok)}</button></div></form>`;
+    <div class="dlg-f">${alt?`<button type="button" class="btn danger cfm-alt" data-alt>${esc(alt)}</button>`:''}<button type="button" class="btn" data-no>Cancel</button><button type="submit" class="btn ${danger?'dangerfill':'pri'}" data-yes ${typed?'disabled':''}>${esc(ok)}</button></div></form>`;
   let done=false;const fin=v=>{if(done)return;done=true;c.close();res(v)};
   const yes=c.querySelector('[data-yes]');
   c.querySelector('[data-no]').onclick=()=>fin(false);
+  const al=c.querySelector('[data-alt]');if(al)al.onclick=()=>fin('alt');
   c.querySelector('form').onsubmit=e=>{e.preventDefault();if(!yes.disabled)fin(true)};
   c.oncancel=e=>{e.preventDefault();fin(false)};
   c.onclick=e=>{if(e.target===c)fin(false)};
@@ -1478,28 +1668,31 @@ const A={
   editVehicle:d=>formVehicle(veh(d.id)),
   range:d=>{S.settings.range=d.v;save();render()},
   theme:d=>{S.settings.theme=d.v;save();render()},
-  export:()=>{dl(`mbauto-backup-${today()}.json`,JSON.stringify(S,null,2),'application/json');try{localStorage.setItem(BKEY,String(Date.now()))}catch(e){}toast('Backup downloaded');if(S.settings.view==='settings')render()},
-  import:()=>$('#importFile').click(),
-  csv:()=>exportCSV(),
+  datamenu:()=>{$('#dataMenu').hidden?openDataMenu():closeDataMenu(true)},
+  saveNow:()=>saveNow(),
+  export:()=>exportAs('json'),
+  changeLoc:()=>exportAs('json'),
+  import:()=>importBackup(),
+  csv:()=>exportAs('csv'),
   sample:async()=>{if(S.vehicles.length&&!await confirmModal({title:'Replace your data with sample data?',msg:'Your current vehicles and records will be replaced with examples. A copy goes to Recently deleted for 30 days.',ok:'Replace data'}))return;const tid=trashFull('Your data, before sample data');OB=null;S=sampleData();save();render();toast('Sample data loaded',tid?()=>trashRestore(tid):null)},
   wipe:async()=>{if(!await confirmModal({title:'Erase all data?',msg:'This deletes every vehicle and record. A copy stays in Recently deleted for 30 days so you can restore it. To remove it for good, empty Recently deleted afterward.',ok:'Erase everything',typed:'ERASE'}))return;const tid=trashFull('All data, before erase');const th=S.settings.theme;S=blank();S.settings.theme=th;S.settings.view='settings';save();render();toast('All data erased',tid?()=>trashRestore(tid):null)},
   trashRestore:d=>trashRestore(d.id),
   trashEmpty:async()=>{if(!await confirmModal({title:'Empty Recently deleted?',msg:`This permanently removes ${plural(TRASH.length,'item')}. They can’t be restored after this.`,ok:'Empty permanently'}))return;TRASH=[];try{localStorage.removeItem(TKEY)}catch(e){}render();toast('Recently deleted emptied')},
   back:()=>A.view({v:['privacy','terms'].includes(PREV)||!PREV?'settings':PREV})
 };
-document.addEventListener('click',e=>{const t=e.target.closest('[data-act]');if(!t||t.closest('dialog'))return;const f=A[t.dataset.act];if(f){e.preventDefault();f(t.dataset)}});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-act]');if(!t||t.closest('dialog'))return;const f=A[t.dataset.act];if(f){e.preventDefault();if(t.closest('#dataMenu'))closeDataMenu();f(t.dataset)}});
 document.addEventListener('input',e=>{if(e.target.dataset.search==='maint'){vMaint.q=e.target.value;const pos=e.target.selectionStart;render();const s=document.querySelector('[data-search=maint]');s.focus();s.setSelectionRange(pos,pos)}});
 $('#vsel').addEventListener('change',e=>{S.settings.active=e.target.value;save();render()});
 $('#themeBtn').addEventListener('click',()=>{S.settings.theme=S.settings.theme==='dark'?'light':'dark';save();render()});
-$('#importFile').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();if(f.size>25e6){toast('That file is too large to be an mbauto.online backup');e.target.value='';return}rd.onload=async()=>{try{const raw=JSON.parse(rd.result);if(!isObj(raw)||!Array.isArray(raw.vehicles))throw 0;const d=normalize(raw);if(S.vehicles.length&&!await confirmModal({title:'Restore this backup?',msg:`The backup has ${plural(d.vehicles.length,'vehicle')}. Everything currently in this browser will be replaced.`,ok:'Restore',danger:true}))return;const tid=trashFull('Your data, before restoring a backup');OB=null;S=d;save();render();toast('Backup restored',tid?()=>trashRestore(tid):null)}catch(err){toast('That file isn’t a valid mbauto.online backup')}};rd.readAsText(f);e.target.value=''});
+$('#importFile').addEventListener('change',e=>{const f=e.target.files[0];e.target.value='';if(f)readBackup(f)});
 function dl(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},500)}
-function exportCSV(){
+function csvText(){
   const q=x=>{let v=String(x??'');if(typeof x==='string'&&/^[=+\-@\t\r]/.test(v)&&!/^-?\d+(\.\d+)?$/.test(v))v="'"+v;return/[",\n\r]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v};
   const rows=[['type','vehicle','date','odometer','category','description','quantity','unit_price','amount','shop_or_station','repeats','notes']];
   for(const x of S.fuel)rows.push(['fuel',vname(veh(x.vid)),x.date,x.odo,x.full?'full':'partial','Fill-up',x.gal,x.ppg,fuelTotal(x).toFixed(2),x.station,'',x.notes]);
   for(const s of S.services)rows.push([s.kind,vname(veh(s.vid)),s.date,s.odo,s.kind==='repair'?(s.covered?'covered':'repair'):'maintenance',s.kind==='repair'?s.title:workText(s),'','',s.cost,s.shop||(s.diy?'DIY':''),'',[s.symptom,s.notes].filter(Boolean).join(' | ')]);
   for(const e of S.expenses)rows.push(['expense',vname(veh(e.vid)),e.date,'',e.category,e.category,'','',e.amount,'',e.repeat&&e.repeat!=='none'?REPEATS[e.repeat]+(e.until?' until '+e.until:''):'',e.notes]);
-  dl(`mbauto-records-${today()}.csv`,rows.map(r=>r.map(q).join(',')).join('\n'),'text/csv');toast('CSV downloaded');
+  return rows.map(r=>r.map(q).join(',')).join('\n');
 }
 
 /* ================= search ================= */
@@ -1551,9 +1744,10 @@ document.addEventListener('keydown',e=>{
 /* ================= FAQ ================= */
 const FAQ=[
  ['Your data',[
-  ['Where is my data stored?','Only in this browser, on this device. There’s no account, and the app never sends your records anywhere.<ul><li>Clearing site data or using a private window erases them.</li><li>Export a backup from Settings to stay safe.</li></ul>See <b>Privacy</b> at the bottom of Settings for details.'],
+  ['Where is my data stored?','Only in this browser, on this device. There’s no account, and the app never sends your records anywhere.<ul><li>Clearing site data or using a private window erases them.</li><li>Save a backup from the <b>Data</b> menu to stay safe.</li></ul>See <b>Privacy</b> at the bottom of Settings for details.'],
   ['Can I get back something I deleted?','Yes, for 30 days. Go to Settings → <b>Recently deleted</b> and tap Restore. A deleted vehicle comes back with all its records.'],
-  ['How do I move my records to another phone or computer?','On the old device, tap <b>Export backup</b>. Open mbauto.online on the new device, go to Settings, tap <b>Restore backup</b> and pick that file. Restoring replaces whatever is already on the new device.'],
+  ['How do I move my records to another phone or computer?','On the old device, open <b>Data → Save backup now</b> (or Export All (JSON)…). On the new device, open <b>Data → Import Backup (JSON)…</b> and pick that file. If the new device already has records, choose <b>Merge</b> to add what’s missing or <b>Replace</b> for an exact copy.'],
+  ['Where does Save backup now put the file?','The first time, your browser asks where to save it. After that, Save backup now (Ctrl/⌘+S) overwrites that same file in one click. Use <b>Change location…</b> in the Data menu to pick another. Browsers only tell the page the file name, not the full folder path. Firefox, Safari and phones can’t pick a location, so there each backup downloads to Downloads with the date in its name.'],
   ['Does mbauto.online use cookies or tracking?','No cookies, analytics or ads. Your records sit in the browser’s local storage. After the page loads, the app makes no network requests.']]],
  ['Fuel',[
   ['How is MPG calculated?','Between two fill-ups marked <b>Filled the tank completely</b>: the miles between those odometer readings divided by all the fuel added since the previous full tank (partial fills included). Partial fill-ups don’t show MPG on their own row.'],
@@ -1708,6 +1902,7 @@ addEventListener('storage',e=>{if(e.key===KEY){S=load();if(!document.querySelect
 document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches&&e.target.matches('[data-act]:not(button):not(a)')&&!e.target.closest('dialog')){e.preventDefault();e.target.click()}});
 render();
 askPersist();
+loadHandles();
 if(LOADERR)toast('Saved records couldn’t be read. A copy was kept on this device.');
 </script>
 </body>
