@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>mbauto.online</title>
 <meta name="description" content="Track fuel, service, repairs and cost per mile for your vehicle. No account needed.">
-<meta name="theme-color" content="#46596b">
+<meta name="theme-color" content="#256b8f">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%2346596B'/%3E%3Cpath d='M16.5 45A17 17 0 1 1 47.5 45' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 39L42 28' fill='none' stroke='%23F2B640' stroke-width='5.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='39' r='5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%23256B8F'/%3E%3Cpath d='m 16.5,43.990999 a 17,17 0 1 1 31,0' fill='none' stroke='%23fff' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='m 32,37.990999 10,-11' fill='none' stroke='%23F2B640' stroke-width='5.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='37.990997' r='5' fill='%23fff'/%3E%3C/svg%3E">
 <script>
 /* Load light unless dark was picked last time. Runs before first paint. */
 (function(){var t='light';try{var d=JSON.parse(localStorage.getItem('mbauto.v1')||'null');if(d&&d.settings&&d.settings.theme==='dark')t='dark'}catch(e){}document.documentElement.setAttribute('data-theme',t)})();
@@ -19,10 +19,10 @@
   /* shared "Utility" neutrals; app accent = steel/gunmetal */
   --bg:#f3f4f6; --surface:#ffffff; --surface-2:#f6f7f9; --surface-3:#eceef2; --border:#dfe2e7; --border-2:#c6cbd3;
   --text:#1b1f24; --text-2:#48505c; --muted:#5f6773;
-  --accent:#46596b; --accent-strong:#33424f; --accent-soft:#e6ebf0; --on-accent:#ffffff; --accent-line:rgba(70,89,107,.38);
+  --accent:#256b8f; --accent-strong:#1b5370; --accent-soft:#e4eff5; --on-accent:#ffffff; --accent-line:rgba(37,107,143,.38);
   --ok:#1f7a3d; --ok-soft:#e3f2e8; --warn:#9a5c00; --warn-soft:#fbefd9; --bad:#b8322b; --bad-soft:#fbe5e3;
   /* chart series: steel-blue lead + validated companions (light surface) */
-  --s1:#3566a6; --s2:#c47d10; --s3:#1f9d93; --s4:#7b5cc4; --s5:#d9677b; --s6:#6f7f2a;
+  --s1:#256b8f; --s2:#c47d10; --s3:#1f9d93; --s4:#7b5cc4; --s5:#d9677b; --s6:#6f7f2a;
   --grid:#e8eaed; --shadow:0 1px 2px rgba(20,24,31,.06); --on-bad:#ffffff;
   --r:6px; --r-sm:4px; --ctl:38px; --ctl-sm:32px; --ease:120ms ease;
   --font:"Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;
@@ -33,9 +33,9 @@
     color-scheme: dark;
     --bg:#16181c; --surface:#1e2126; --surface-2:#25292f; --surface-3:#2d3238; --border:#30353c; --border-2:#434a53;
     --text:#e9ecf0; --text-2:#b4bbc5; --muted:#8e97a3;
-    --accent:#9fb4c6; --accent-strong:#c0d0dd; --accent-soft:#2a343e; --on-accent:#0e1317; --accent-line:rgba(159,180,198,.45);
+    --accent:#7db6d4; --accent-strong:#a6cde3; --accent-soft:#1f323d; --on-accent:#08161e; --accent-line:rgba(125,182,212,.45);
     --ok:#56c585; --ok-soft:#173226; --warn:#e5a740; --warn-soft:#3a2b12; --bad:#f07a70; --bad-soft:#3d1c1a;
-    --s1:#4f86cf; --s2:#bb7f14; --s3:#22a095; --s4:#8e7ae0; --s5:#d0637c; --s6:#6c8a2a;
+    --s1:#5ba3c9; --s2:#bb7f14; --s3:#22a095; --s4:#8e7ae0; --s5:#d0637c; --s6:#6c8a2a;
     --grid:#2b3037; --shadow:0 1px 2px rgba(0,0,0,.3); --on-bad:#1c0c0b;
     --shadow-pop:0 10px 28px -6px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03); --hover-band:rgba(255,255,255,.05);
   }
@@ -44,9 +44,9 @@
   color-scheme: dark;
   --bg:#16181c; --surface:#1e2126; --surface-2:#25292f; --surface-3:#2d3238; --border:#30353c; --border-2:#434a53;
   --text:#e9ecf0; --text-2:#b4bbc5; --muted:#8e97a3;
-  --accent:#9fb4c6; --accent-strong:#c0d0dd; --accent-soft:#2a343e; --on-accent:#0e1317; --accent-line:rgba(159,180,198,.45);
+  --accent:#7db6d4; --accent-strong:#a6cde3; --accent-soft:#1f323d; --on-accent:#08161e; --accent-line:rgba(125,182,212,.45);
   --ok:#56c585; --ok-soft:#173226; --warn:#e5a740; --warn-soft:#3a2b12; --bad:#f07a70; --bad-soft:#3d1c1a;
-  --s1:#4f86cf; --s2:#bb7f14; --s3:#22a095; --s4:#8e7ae0; --s5:#d0637c; --s6:#6c8a2a;
+  --s1:#5ba3c9; --s2:#bb7f14; --s3:#22a095; --s4:#8e7ae0; --s5:#d0637c; --s6:#6c8a2a;
   --grid:#2b3037; --shadow:0 1px 2px rgba(0,0,0,.3); --on-bad:#1c0c0b;
   --shadow-pop:0 10px 28px -6px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.03); --hover-band:rgba(255,255,255,.05);
 }
@@ -620,7 +620,7 @@ dialog::backdrop{background:rgba(10,12,16,.45)}
 @media print{header.top,.fab,.totop,.notice{box-shadow:none}.hero{border-left-width:1px}}
 
 /* shared ecosystem components: logo badge + light/dark switch */
-.logo{width:28px;height:28px;border-radius:var(--r);background:#46596b;display:grid;place-items:center;flex:none}
+.logo{width:28px;height:28px;border-radius:var(--r);background:#256b8f;display:grid;place-items:center;flex:none}
 .logo svg{width:100%;height:100%}
 .welcome .logo{width:52px;height:52px;border-radius:var(--r)}
 .welcome .logo svg{width:100%;height:100%}
@@ -686,7 +686,7 @@ dialog::backdrop{background:rgba(10,12,16,.45)}
 <body>
 <header class="top">
   <div class="bar">
-    <div class="brand"><div class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M16.5 45A17 17 0 1 1 47.5 45" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 39L42 28" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="39" r="5" fill="#fff"/></svg></div><span>mbauto<span class="tld">.online</span></span></div>
+    <div class="brand"><div class="logo"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m 16.5,43.990999 a 17,17 0 1 1 31,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="m 32,37.990999 10,-11" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="37.990997" r="5" fill="#fff"/></svg></div><span>mbauto<span class="tld">.online</span></span></div>
     <div class="spacer"></div>
     <select class="vsel" id="vsel" aria-label="Vehicle"></select>
     <button class="iconbtn" id="searchBtn" data-act="search" title="Search (/)" aria-label="Search all records"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></button>
@@ -751,7 +751,7 @@ const P={
   folder:'<path d="M3.5 7V18a1.5 1.5 0 0 0 1.5 1.5h14a1.5 1.5 0 0 0 1.5-1.5V9A1.5 1.5 0 0 0 19 7.5h-7l-2-2.5H5A1.5 1.5 0 0 0 3.5 6.5z"/>',
   lock:'<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>'
 };
-const LOGO='<svg viewBox="0 0 64 64" aria-hidden="true"><path d="M16.5 45A17 17 0 1 1 47.5 45" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M32 39L42 28" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="39" r="5" fill="#fff"/></svg>';
+const LOGO='<svg viewBox="0 0 64 64" aria-hidden="true"><path d="m 16.5,43.990999 a 17,17 0 1 1 31,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="m 32,37.990999 10,-11" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="37.990997" r="5" fill="#fff"/></svg>';
 const ic=(n,c='i')=>`<svg class="${c}" viewBox="0 0 24 24">${P[n]||''}</svg>`;
 
 /* ================= storage ================= */
