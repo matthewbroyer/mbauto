@@ -2,7 +2,7 @@
    Network-first for the app's own files, cache as the offline fallback. Never touches user data
    (localStorage / IndexedDB are not involved), never intercepts non-GET or cross-origin requests.
    BUMP VERSION ON EVERY RELEASE so old cached files are dropped. */
-const VERSION = 'mbauto-20261014-6149036e';
+const VERSION = 'mbauto-20261014-eac0bc3c';
 const SHELL = ['./', 'index.html', 'manifest.json', 'apple-touch-icon.png', 'favicon.svg', 'favicon.ico', 'mb-title.js', 'mb-install.js', 'mb-share.js', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png'];
 
 self.addEventListener('install', e => {

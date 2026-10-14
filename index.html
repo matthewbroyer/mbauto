@@ -970,6 +970,18 @@ a.brand:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .mb-install.is-done{border-left-color:var(--good)}
 .mb-install.is-done>.uic{color:var(--good-ink)}
 @media (max-width:520px){.mb-install{flex-wrap:wrap}.mb-install .btn{width:100%}}
+/* ---- about card (bottom of Settings/More, below the Install card · SUITE-STANDARDS §1 · kit v3.1) ---- */
+.mb-about{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;margin-top:12px;border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:var(--r);background:var(--surface)}
+.mb-about>.uic{flex:none;width:22px;height:22px;color:var(--accent)}
+.mb-about>div{flex:1;min-width:0}
+.mb-about b{display:block;font-size:14px;font-weight:600;color:var(--ink)}
+.mb-about p{margin:2px 0 0;font-size:12.5px;color:var(--ink-2)}
+.mb-about .mb-about-links{display:flex;flex-wrap:wrap;gap:0 14px;margin-top:4px}
+.mb-about .mb-about-links a,.mb-about .mb-about-links button{display:inline-flex;align-items:center;min-height:28px;padding:0;border:0;background:none;
+  font:inherit;color:var(--accent);text-decoration:underline;text-underline-offset:2px;cursor:pointer}
+.mb-about .mb-about-links a:hover,.mb-about .mb-about-links button:hover{color:var(--accent-hover)}
+.mb-about .mb-about-copy{margin-top:4px;color:var(--muted,var(--ink-2))}
 
 /* ---- share button (put it where the milestone is shown) ---- */
 .mb-share-btn .uic{width:16px;height:16px}
@@ -1025,13 +1037,13 @@ dialog.mb-share::backdrop{background:var(--scrim)}
 <body class="mb-shell">
 <a class="skip" href="#main">Skip to content</a>
 <aside class="mb-side" aria-label="App">
-  <a class="brand" href="./" data-act="home" aria-label="mbauto.online: go to Overview"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="abg1" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="54" y2="64"><stop offset="0" stop-color="#44809f"/><stop offset=".55" stop-color="#256B8F"/><stop offset="1" stop-color="#1e5672"/></linearGradient><clipPath id="abc1"><rect width="64" height="64" rx="18"/></clipPath></defs><g clip-path="url(#abc1)"><rect width="64" height="64" fill="url(#abg1)"/><ellipse cx="14" cy="6" rx="40" ry="26" fill="#fff" opacity=".14"/><path d="m 16.5,43.990999 a 17,17 0 1 1 31,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="m 32,37.990999 10,-11" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="37.990997" r="5" fill="#fff"/></g><rect x=".5" y=".5" width="63" height="63" rx="17.5" fill="none" stroke="#fff" stroke-opacity=".24"/></svg></span><span class="bt"><b>mbauto<i class="tld">.online</i></b><span>Official Web App · v1.0</span></span></a>
+  <a class="brand" href="./" data-act="home" aria-label="mbauto.online: go to Overview"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="abg1" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="54" y2="64"><stop offset="0" stop-color="#44809f"/><stop offset=".55" stop-color="#256B8F"/><stop offset="1" stop-color="#1e5672"/></linearGradient><clipPath id="abc1"><rect width="64" height="64" rx="18"/></clipPath></defs><g clip-path="url(#abc1)"><rect width="64" height="64" fill="url(#abg1)"/><ellipse cx="14" cy="6" rx="40" ry="26" fill="#fff" opacity=".14"/><path d="m 16.5,43.990999 a 17,17 0 1 1 31,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="m 32,37.990999 10,-11" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="37.990997" r="5" fill="#fff"/></g><rect x=".5" y=".5" width="63" height="63" rx="17.5" fill="none" stroke="#fff" stroke-opacity=".24"/></svg></span><span class="bt"><b>mbauto<i class="tld">.online</i></b><span>Official Web App · v1.1</span></span></a>
   <nav class="side-nav" id="sideNav" aria-label="Sections"></nav>
   <nav class="side-nav side-end" id="sideEnd" aria-label="More"></nav>
 </aside>
 <div class="mb-main">
   <header class="page-bar">
-    <a class="brand phone-brand" href="./" data-act="home" aria-label="mbauto.online: go to Overview"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="abg2" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="54" y2="64"><stop offset="0" stop-color="#44809f"/><stop offset=".55" stop-color="#256B8F"/><stop offset="1" stop-color="#1e5672"/></linearGradient><clipPath id="abc2"><rect width="64" height="64" rx="18"/></clipPath></defs><g clip-path="url(#abc2)"><rect width="64" height="64" fill="url(#abg2)"/><ellipse cx="14" cy="6" rx="40" ry="26" fill="#fff" opacity=".14"/><path d="m 16.5,43.990999 a 17,17 0 1 1 31,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="m 32,37.990999 10,-11" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="37.990997" r="5" fill="#fff"/></g><rect x=".5" y=".5" width="63" height="63" rx="17.5" fill="none" stroke="#fff" stroke-opacity=".24"/></svg></span><span class="bt"><b>mbauto<i class="tld">.online</i></b><span>Official Web App · v1.0</span></span></a>
+    <a class="brand phone-brand" href="./" data-act="home" aria-label="mbauto.online: go to Overview"><span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><defs><linearGradient id="abg2" gradientUnits="userSpaceOnUse" x1="10" y1="0" x2="54" y2="64"><stop offset="0" stop-color="#44809f"/><stop offset=".55" stop-color="#256B8F"/><stop offset="1" stop-color="#1e5672"/></linearGradient><clipPath id="abc2"><rect width="64" height="64" rx="18"/></clipPath></defs><g clip-path="url(#abc2)"><rect width="64" height="64" fill="url(#abg2)"/><ellipse cx="14" cy="6" rx="40" ry="26" fill="#fff" opacity=".14"/><path d="m 16.5,43.990999 a 17,17 0 1 1 31,0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="m 32,37.990999 10,-11" fill="none" stroke="#F2B640" stroke-width="5.5" stroke-linecap="round"/><circle cx="32" cy="37.990997" r="5" fill="#fff"/></g><rect x=".5" y=".5" width="63" height="63" rx="17.5" fill="none" stroke="#fff" stroke-opacity=".24"/></svg></span><span class="bt"><b>mbauto<i class="tld">.online</i></b><span>Official Web App · v1.1</span></span></a>
     <div class="page-title" id="pageTitle" aria-hidden="true">Overview</div>
     <select class="vsel" id="vsel" aria-label="Vehicle"></select>
     <div class="actions">
@@ -1883,29 +1895,35 @@ function vGarage(){
 /* ---- Settings ---- */
 function vSettings(){
   const c=k=>S[k].length;
-  return`<div class="head"><div><h1>Settings & help</h1><div class="sub">Your records live only in this browser. Save a backup to keep them safe. · Version ${VERSION}</div></div><button class="btn" data-act="view" data-v="dash">Back</button></div>
+  return`<div class="head"><div><h1>Settings & help</h1><div class="sub">Your records live only in this browser. Save a backup to keep them safe.</div></div><button class="btn" data-act="view" data-v="dash">Back</button></div>
   ${backupCard()}
   <div class="grid g3 mt">
   <div class="card pad stack"><h2>Appearance</h2><div class="seg">${[['light','Light'],['dark','Dark']].map(([k,l])=>`<button class="${S.settings.theme===k?'on':''}" aria-pressed="${S.settings.theme===k}" data-act="theme" data-v="${k}">${l}</button>`).join('')}</div></div>
   <div class="card pad stack"><h2>Sample data</h2><div class="sub">Loads a sample car and motorcycle with past fill-ups, services and expenses. Replaces your current data.</div><div><button class="btn" data-act="sample">Load sample data</button></div></div>
   <div class="card pad stack"><h2>Erase everything</h2><div class="sub">Deletes all vehicles and records. They stay in Recently deleted for 30 days unless you empty it.</div><div><button class="btn danger" data-act="wipe">${ic('trash')}Erase all data</button></div></div>
-  </div>${installCard()}${trashHTML()}${faqHTML()}${notesHTML()}
-  <div class="card pad mt" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h2>Privacy & terms</h2><div class="sub">What mbauto.online stores, and the limits of its estimates.</div></div><div class="toolbar"><button class="btn" data-act="view" data-v="privacy">Privacy</button><button class="btn" data-act="view" data-v="terms">Terms of use</button></div></div>`;
+  </div>${trashHTML()}${faqHTML()}${notesHTML()}
+  <div class="card pad mt" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap"><div><h2>Privacy & terms</h2><div class="sub">What mbauto.online stores, and the limits of its estimates.</div></div><div class="toolbar"><button class="btn" data-act="view" data-v="privacy">Privacy</button><button class="btn" data-act="view" data-v="terms">Terms of use</button></div></div>
+  ${installCard()}${aboutCard()}`;
 }
 function backupCard(){const c=k=>S[k].length;
   return`<div class="card pad stack" id="bkcard"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><h2>Backup</h2>${backupPill()}</div><div class="sub">${c('vehicles')} vehicles · ${c('services')} service/repair records · ${c('fuel')} fill-ups · ${c('expenses')} expenses · ${c('reminders')} reminders</div>
     <div class="toolbar"><button class="btn pri" data-act="saveNow">${ic('save')}Save backup now</button><button class="btn" data-act="export">${ic('download')}Export All (JSON)…</button><button class="btn" data-act="import">${ic('upload')}Import Backup (JSON)…</button><button class="btn" data-act="csv">${ic('table')}Export All (CSV)…</button><button class="btn" data-act="importCsv">${ic('upload')}Import CSV…</button></div>${attachNote()}
     <div class="loc">${locHTML()}</div>${storageNote()}</div>`}
 /* ---- release notes ---- */
-const VERSION='1.3.0';
+const VERSION='1.1';
 const RELEASES=[
- ['1.3','October 14, 2026',[
+ ['1.1','October 14, 2026',[
+  '<b>About</b> card at the bottom of Settings: version, release date, links and copyright in one place.',
+  '<b>Installing from matthewbroyer.com:</b> the hub’s Install button opens the app with a short install prompt.',
+  'New “page not found” page that matches the app and links back to it.',
+  'Version numbers now follow the “Official Web App” label in the sidebar. Earlier releases below are listed by their old build numbers.']],
+ ['Build 1.3','October 14, 2026',[
   '<b>New layout.</b> Sections are in a sidebar on computers, a slim rail on tablets, and a bottom bar with <b>More</b> on phones. The page you’re on is named at the top.',
   'The logo and name always take you back to Overview. Browser tabs read “Auto | Fuel” and so on.',
   '<b>Share</b> a vehicle log or fuel economy image from Overview (with one vehicle selected) or Fuel. It’s made on your device, and the vehicle name and money amounts are hidden unless you turn them on.',
   'Install card in Settings. Once installed, the app is called <b>Auto</b>.',
   'Refreshed look to match the rest of the MB app family: a softer gauge icon, a banner on Overview and light color gradients. Nothing about your records changed.']],
- ['1.2','October 14, 2026',[
+ ['Build 1.2','October 14, 2026',[
   '<b>Receipts and photos.</b> Attach photos or PDFs to fill-ups, services, repairs, expenses, problems, quotes and checklists. Large phone photos are shrunk to save space. Everything stays on this device and is included in your backups.',
   '<b>Glovebox</b> in Garage for your insurance card, registration, title, warranties and manuals, with a heads-up 30 days before something expires.',
   '<b>History</b> tab: every record on one timeline, grouped by year, with filters.',
@@ -1923,10 +1941,10 @@ const RELEASES=[
   'Mark services and repairs done <b>before you owned it</b>; they stay in the history but not in your costs.',
   'A warning before saving what looks like a duplicate entry, and the expense form remembers your last category.',
   '<b>Check recalls</b> and <b>Copy VIN</b> in Garage. The recall link opens NHTSA’s site; the app doesn’t send your VIN anywhere.']],
- ['1.1.1','September 28, 2026',[
+ ['Build 1.1.1','September 28, 2026',[
   'Refreshed app icon: a bolder gauge with an amber needle, now the same in the browser tab, the header and the welcome screen.',
   'The header logo keeps its slate background in dark mode instead of turning light blue-gray.']],
- ['1.1','September 26, 2026',[
+ ['Build 1.1','September 26, 2026',[
   '<b>Data menu</b> in the header with Save backup now, Export All (JSON)…, Import Backup (JSON)… and Export All (CSV)….',
   '<b>Choose where backups go.</b> Pick the folder and file name once; mbauto.online remembers it and <b>Save backup now</b> (Ctrl/⌘+S) overwrites that file in one click.',
   'Save backup now also refreshes your CSV file once you’ve exported one to a chosen location.',
@@ -1938,7 +1956,7 @@ const RELEASES=[
   'Pick light or dark on the welcome screen. The app still opens in light unless you chose dark.',
   'Colors, borders and the light/dark switch now match the rest of the MB app family.',
   'Release notes (this list).']],
- ['1.0','',[
+ ['Build 1.0','',[
   'Overview with odometer, cost per mile, spending this year and what’s due next.',
   'Maintenance reminders by miles, months or both, with default schedules for cars, motorcycles and EVs.',
   'Fuel log with MPG (or mi/kWh) per full tank and a trend chart.',
@@ -1947,8 +1965,18 @@ const RELEASES=[
   'Garage for multiple vehicles, search across every record (/ or Ctrl+K), and Recently deleted for 30 days.',
   'JSON backup, CSV export, sample data. Everything stays in this browser.']]
 ];
-function notesHTML(){return`<div class="card mt faq" id="notes"><div class="card-h"><div><h2>Release notes</h2><div class="sub">You’re on version ${VERSION}</div></div></div>${RELEASES.map(([v,d,it],i)=>`<details${i===0?' open':''}><summary><span>Version ${v}${d?` <span class="muted" style="font-weight:500">· ${d}</span>`:''}</span>${ic('chev')}</summary><div class="a"><ul class="rn-list">${it.map(x=>`<li>${x}</li>`).join('')}</ul></div></details>`).join('')}</div>`}
+function notesHTML(){return`<div class="card mt faq" id="notes"><div class="card-h"><div><h2>Release notes</h2><div class="sub">You’re on version ${VERSION}</div></div></div>${RELEASES.map(([v,d,it],i)=>`<details${i===0?' open':''}><summary><span>${/^\d/.test(v)?'Version '+v:v}${d?` <span class="muted" style="font-weight:500">· ${d}</span>`:''}</span>${ic('chev')}</summary><div class="a"><ul class="rn-list">${it.map(x=>`<li>${x}</li>`).join('')}</ul></div></details>`).join('')}</div>`}
 function attachNote(){const ids=Object.keys(FMETA);if(!ids.length)return'';const b=ids.reduce((a,id)=>a+(FMETA[id].size||0),0);return`<div class="fine" style="margin:0">${plural(ids.length,'attachment')} (${fsize(b)}) stored on this device. Backups include them, so backup files get bigger.</div>`}
+function aboutCard(){
+  return`<div class="mb-about" role="group" aria-label="About this app">
+  <svg class="uic" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.01"/></svg>
+  <div>
+    <b>mbauto.online™</b>
+    <p>Version 1.1 · Oct 14, 2026</p>
+    <p class="mb-about-links"><button type="button" data-act="notes">What's new</button><button type="button" data-act="view" data-v="privacy">Privacy</button><button type="button" data-act="view" data-v="terms">Terms</button><a href="https://matthewbroyer.com/">More free apps at matthewbroyer.com</a></p>
+    <p class="mb-about-copy">© 2026 Matthew Broyer. All rights reserved.</p>
+  </div>
+</div>`}
 function installCard(){
   return`<div class="mt" data-mb-install data-app-name="Auto" data-note="Opens in its own window with its own icon. Works offline after the first visit. Your records stay on this device either way." hidden></div>`}function trashHTML(){
   return`<div class="card mt" id="trash"><div class="card-h"><div><h2>Recently deleted</h2><div class="sub">Kept on this device for ${TDAYS} days, then removed.</div></div>${TRASH.length?`<button class="btn sm danger" data-act="trashEmpty">${ic('trash')}Empty</button>`:''}</div>
@@ -2520,6 +2548,7 @@ const A={
   openFile:d=>openFile(d.id),
   trashRestore:d=>trashRestore(d.id),
   trashEmpty:async()=>{if(!await confirmModal({title:'Empty Recently deleted?',msg:`This permanently removes ${plural(TRASH.length,'item')}. They can’t be restored after this.`,ok:'Empty permanently'}))return;TRASH=[];try{localStorage.removeItem(TKEY)}catch(e){}for(const id of Object.keys(FMETA))FMETA[id].at=0;fileGC().then(render);render();toast('Recently deleted emptied')},
+  notes:()=>{const n=$('#notes');if(!n)return;const d=n.querySelector('details');if(d)d.open=true;n.scrollIntoView({block:'start'})},
   back:()=>A.view({v:['privacy','terms'].includes(PREV)||!PREV?'settings':PREV})
 };
 document.addEventListener('click',e=>{const t=e.target.closest('[data-act]');if(!t||t.closest('dialog'))return;const f=A[t.dataset.act];if(f){e.preventDefault();if(t.closest('#dataMenu'))closeDataMenu();f(t.dataset)}});
