@@ -1,6 +1,11 @@
 # Attributions
 
-mbauto.online is a single HTML file with no external libraries, fonts, images or services.
+mbauto.online has no external libraries, fonts, images or services. Everything it loads comes from its own site:
+
+- `index.html`, `sw.js`, `manifest.json`: written for this app.
+- `mb-title.js`, `mb-install.js`, `mb-share.js` and the MB Suite stylesheets inlined in `index.html`: Matthew Broyer's MB Suite design system, shared by his mb apps.
+- Icons (`favicon.svg`, `favicon.ico`, PNGs): the app's own gauge logo on the MB Suite v2 gradient badge.
+- The banner and share-card art: flat shapes from the MB Suite nature library (NA-06 Hills, NA-08 Pebble Path), drawn for the suite.
 
 ## Icons
 
@@ -35,6 +40,10 @@ SOFTWARE.
 ## Fonts
 
 None. The app uses the device's system font. (Google Fonts "Inter" was removed in the September 2026 audit.)
+
+## Links
+
+The **Check recalls** button links to the U.S. National Highway Traffic Safety Administration's recall lookup (nhtsa.gov). mbauto.online isn't affiliated with or endorsed by NHTSA.
 
 ## Trademarks
 
