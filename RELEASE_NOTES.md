@@ -2,6 +2,12 @@
 
 Newest first. One entry per release, in plain words a user would understand. The full history is also in the app under Settings → Release notes.
 
+## 1.2 · 2026-10-14
+- On computers, the search box, backup status and logo spacing now look exactly like the other mb apps: same size, same "Search…" text and the same "/" shortcut.
+- Top bar matches the other mb apps: logo and name on the left, then Search, Data and the light/dark switch as same-size square buttons on phones, with labels on computers.
+- Vehicle picker on phones sits in its own row at the top of the page, so the top bar stays one tidy line. On computers it sits next to the page title.
+- Your records, backups and CSV files are unchanged.
+
 ## 1.1 · 2026-10-14
 - About card at the bottom of Settings: version, release date, links and copyright in one place.
 - Installing from matthewbroyer.com: the hub's Install button opens the app with a short install prompt.
